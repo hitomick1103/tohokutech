@@ -13,12 +13,30 @@
         function onDeviceReady() {
             console.log("PhoneGap is ready");
         }
+        
+        // onclick JavaScript
+         window.onload = function () {
+            var eButton1 = document.getElementById("hoge1");
+            eButton1.addEventListener("click",function(){
+                console.log("#hoge1クリック" + new Date());
+            },false);
+        }
+
+        // onclick Jquery
+        $(function() {
+            $("#hoge2").on("click",function(){    
+                console.log("#hoge2クリック" + new Date());
+            });
+        });
+        
     </script>
 </head>
 <body>
 
     <h1>Hello World!!</h1>
-    <a class="button--large" href="phonegap-demo.html">Demo</a>
+    <a class="button--large" href="phonegap-demo.html">Demo</a><br />    
+    <a class="button--large" id="hoge1" href="">btn1(JS)</a><br />
+    <a class="button--large" id="hoge2" href="">btn2(JQuery)</a><br />
 
 </body>
 </html>
